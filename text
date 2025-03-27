@@ -1,0 +1,21 @@
+sip_invite = f"""INVITE sip:user1@{end_client} SIP/2.0
+Via: SIP/2.0/UDP {CLIENT_IP}:{CLIENT_PORT};branch=z9hG4bK776asdhds
+Max-Forwards: 70
+To: <sip:user1@{end_client}>
+From: <sip:user2@{CLIENT_IP}>;tag=1928301774
+Call-ID: 12345678@{CLIENT_IP}
+CSeq: 1 INVITE
+Contact: <sip:user2@{CLIENT_IP}>
+Content-Type: application/sdp
+Content-Length: {len(sip_invite_body)}
+
+
+
+
+
+SIP_SERVER = "10.66.92.221"  # IP of SIP Server
+SIP_PORT = 5060
+CLIENT_IP = "10.66.92.124"  # IP of Client
+end_client = "10.66.92.221"
+CLIENT_PORT = 5062  # SIP Client uses this port
+RTP_PORT = 4000  # RTP port for sending audio
